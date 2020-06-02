@@ -11,7 +11,7 @@ public class Fractional {
 	}
 	
 	Fractional simplify() {
-		//asdasdasdasd
+		//student code
                 
 	}
 	
