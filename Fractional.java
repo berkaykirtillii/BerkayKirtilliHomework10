@@ -12,11 +12,16 @@ public class Fractional {
 	
 	Fractional simplify() {
 		// student code
+                
 	}
 	
 	// Not a Number (NaN) 
 	boolean isNaN() {
-		// student code
+		if(denominator==0){
+                   return true;
+                } 
+                else
+                  return false;
 	}
 
 	boolean isInfinity() {
