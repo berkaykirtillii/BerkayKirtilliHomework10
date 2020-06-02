@@ -1,4 +1,15 @@
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package berkaykirtilli_hw6;
+
+/**
+ *
+ * @author BERKAY
+ */
 public class Fractional {
 	public final long numerator;
 	public final long denominator;
@@ -6,48 +17,33 @@ public class Fractional {
 	public static final String PositiveInfinity = "+Infinity";
 	public static final String NegativeInfinity = "-Infinity";
 	
-	Fractional(long numerator, long denominator) {	
+	public Fractional(long numerator, long denominator) {	
 		// student code
+                this.numerator = numerator;
+                this.denominator = denominator;
 	}
 	
-	Fractional simplify() {
-		//stupid changes vol1
+	public Fractional simplify() {
+		// student code
+                Fractional simplify;
+                simplify= new Fractional(numerator, denominator);
+                int ebob = 1;
                 
-	}
-	
-	// Not a Number (NaN) 
-	boolean isNaN() {
-		if(denominator==0){
-                   return true;
-                } 
-                else
-                  return false;
-	}
-
-	boolean isInfinity() {
-		// student code
-	}
-	
-	static int sign(long numerator, long denominator) {
-		// student code
-	}
-	
-	int sign() {
-		// student code
-	}
-
-	double getValue() {
-		return (double)numerator / denominator;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		// student code
-	}
-	
-	@Override
-	public String toString() {
-		// student code
-	}
-
-}
+                if(numerator > 0 && denominator > 0){
+                   for(int i=1;i<=numerator && i<=denominator;i++){
+                       if(numerator%i ==0 && denominator%i==0){
+                           ebob=i;
+                       }
+                   }
+                    simplify= new Fractional(numerator/ebob,denominator/ebob);
+                }
+                else if(numerator < 0 && denominator > 0){
+                  
+                  for(int i=1;i<=(-1*numerator) && i<=denominator;i++){
+                       if(numerator%i ==0 && denominator%i==0){
+                           ebob=i;
+                       }
+                   }
+                    simplify= new Fractional(numerator/ebob,denominator/ebob);
+                }
+                else if(numerator > 0 && denominator < 0){
